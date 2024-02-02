@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Check iframe sbol</title>
+		<script type="text/javascript">
+			function go() {
+				var button = document.getElementById("button");
+				var url = document.getElementById("input");
+				var form = document.getElementById("form");
+				button.addEventListener("click", function() {
+					form.setAttribute("action", url.value);
+					form.submit();
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<form method="get" target="iframe" id="form" onsubmit="go(); return false">
+			<input type="text" id="input" />
+			<button type="submit" id="button">Просмотр</button>
+		</form>
+		<div className="frame_container">
+			<iframe
+				name="iframe"
+				seamless="seamless"
+				width="100%"
+				height="450"
+				frameborder="0"
+				title="iframe"
+			/>
+		</div>
+
+	</body>
+</html>
